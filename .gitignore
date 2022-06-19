@@ -1,0 +1,4 @@
+/.idea/
+/sentinel-apache-dubbo-fallback-core/target/
+/sentinel-apache-dubbo-fallback-spring-boot-autoconfigure/target/
+/sentinel-apache-dubbo-fallback-spring-boot-starter/target/

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.alibaba.csp</groupId>
+    <artifactId>sentinel-apache-dubbo-fallback</artifactId>
+    <packaging>pom</packaging>
+    <version>1.8.3</version>
+
+    <modules>
+        <module>sentinel-apache-dubbo-fallback-core</module>
+        <module>sentinel-apache-dubbo-fallback-spring-boot-autoconfigure</module>
+        <module>sentinel-apache-dubbo-fallback-spring-boot-starter</module>
+    </modules>
+
+    <properties>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.boot.version>2.6.3</spring.boot.version>
+        <apache.dubbo.version>2.7.13</apache.dubbo.version>
+        <sentinel.version>1.8.3</sentinel.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${apache.dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-apache-dubbo-adapter</artifactId>
+                <version>${sentinel.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
