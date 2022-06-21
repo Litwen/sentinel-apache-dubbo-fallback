@@ -58,13 +58,13 @@ public class SentinelDubboFallback implements DubboFallback {
             if (!ObjectUtils.isEmpty(fallback)) {
                 final Class<?> fallbackClass = fallback.getClass();
                 final Method method = fallbackClass.getMethod(methodName, parameterTypes);
+                method.setAccessible(true);
                 final Object invoke = method.invoke(fallbackClass, arguments);
                 return AsyncRpcResult.newDefaultAsyncResult(invoke, invocation);
             }
 
         } catch (Exception e) {
             // When exception but not blockException happened, just provide fallback result.
-            return AsyncRpcResult.newDefaultAsyncResult(ex.toRuntimeException(), invocation);
         }
 
         return AsyncRpcResult.newDefaultAsyncResult(ex.toRuntimeException(), invocation);
